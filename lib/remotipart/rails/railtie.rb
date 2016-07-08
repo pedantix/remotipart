@@ -37,7 +37,7 @@ module Remotipart
         #  config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
         #else
           config.app_middleware.insert_after ActionController::ParamsWrapper, Middleware
-       # end
+        #end
       end
     end
 
