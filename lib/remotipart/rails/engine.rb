@@ -14,7 +14,8 @@ module Remotipart
       end
 
       initializer "remotipart.include_middelware" do
-        if Rails.version < "5.0"
+        if ::Rails.version < "5.0"
+          puts "USING PARAMS PARSER"
           config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
         else
           config.app_middleware.insert_after ActionDispatch::Flash, Middleware
