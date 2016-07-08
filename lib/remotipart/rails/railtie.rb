@@ -33,7 +33,11 @@ module Remotipart
       end
 
       initializer "remotipart.include_middelware" do
-        config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
+        if Rails.version < "5.0"
+          config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
+        else
+          config.app_middleware.insert_after ActionController::ParamsWrapper, Middleware
+        end
       end
     end
 
