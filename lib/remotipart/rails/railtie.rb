@@ -36,7 +36,7 @@ module Remotipart
         #if Rails.version < "5.0"
         #  config.app_middleware.insert_after ActionDispatch::ParamsParser, Middleware
         #else
-          config.app_middleware.insert_after ActionController::ParamsWrapper, Middleware
+          config.app_middleware.insert_after ActionDispatch::Flash, Middleware
         #end
       end
     end
